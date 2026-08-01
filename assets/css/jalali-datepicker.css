@@ -1,0 +1,357 @@
+/*
+|--------------------------------------------------------------------------
+| FormDesk Jalali Datepicker Style
+|--------------------------------------------------------------------------
+*/
+
+
+.fd-jalali-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 9999;
+    width: 280px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .15);
+    padding: 16px;
+    direction: rtl;
+    font-family: inherit;
+}
+
+
+
+.fd-jalali-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+}
+
+
+
+.fd-jalali-title {
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-weight: 700;
+    font-size: 15px;
+    color: #26273B;
+
+}
+
+
+
+.fd-jalali-label {
+
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 6px;
+    transition: .15s;
+
+}
+
+
+
+.fd-jalali-label:hover {
+
+    background: #F5F7FD;
+    color: var(--fd-primary,#5751E1);
+
+}
+
+
+
+
+.fd-jalali-nav {
+
+    background: #F5F7FD;
+    border: none;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    color: var(--fd-primary,#5751E1);
+
+    transition: .2s;
+
+}
+
+
+
+.fd-jalali-nav:hover {
+
+    background: var(--fd-primary,#5751E1);
+    color: #fff;
+
+}
+
+
+
+
+
+/* Week */
+
+.fd-jalali-week {
+
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    text-align: center;
+
+    margin-bottom: 6px;
+
+}
+
+
+
+.fd-jalali-week span {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #999;
+
+}
+
+
+
+
+
+/* Days */
+
+.fd-jalali-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 4px;
+
+}
+
+
+
+.fd-jalali-day {
+
+    border: none;
+
+    background: transparent;
+
+    height: 34px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    color: #26273B;
+
+    transition: .15s;
+
+}
+
+
+
+.fd-jalali-day:hover {
+
+    background: var(--fd-primary,#5751E1);
+
+    color: #fff;
+
+}
+
+
+
+.fd-jalali-day.today {
+
+    font-weight: 700;
+
+    color: var(--fd-primary,#5751E1);
+
+    border: 1px solid var(--fd-primary,#5751E1);
+
+}
+
+
+
+
+
+/* ---------------- Months ---------------- */
+
+
+.fd-jalali-grid.fd-jalali-months-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+
+
+.fd-jalali-month-cell {
+
+
+    border: none;
+
+    background: #F5F7FD;
+
+    height: 40px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    color: #26273B;
+
+    transition: .15s;
+
+
+}
+
+
+
+.fd-jalali-month-cell:hover {
+
+
+    background: var(--fd-primary,#5751E1);
+
+    color: #fff;
+
+
+}
+
+
+
+.fd-jalali-month-cell.active {
+
+
+    background: var(--fd-primary,#5751E1);
+
+    color: #fff;
+
+    font-weight: 700;
+
+
+}
+
+
+
+
+
+/* ---------------- Years ---------------- */
+
+
+.fd-jalali-grid.fd-jalali-years-grid {
+
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+
+}
+
+
+
+.fd-jalali-year-cell {
+
+
+    border: none;
+
+    background: #F5F7FD;
+
+    height: 40px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    color: #26273B;
+
+    transition: .15s;
+
+
+}
+
+
+
+.fd-jalali-year-cell:hover {
+
+
+    background: var(--fd-primary,#5751E1);
+
+    color: #fff;
+
+
+}
+
+
+
+.fd-jalali-year-cell.active {
+
+
+    background: var(--fd-primary,#5751E1);
+
+    color: #fff;
+
+    font-weight: 700;
+
+
+}
+
+
+
+
+
+/* Mobile */
+
+@media(max-width:480px) {
+
+
+    .fd-jalali-panel {
+
+        width: calc(100vw - 40px);
+
+        right: 50%;
+
+        transform: translateX(50%);
+
+    }
+
+
+
+    .fd-jalali-month-cell,
+    .fd-jalali-year-cell {
+
+        font-size: 12px;
+
+        height: 38px;
+
+    }
+
+
+
+}

@@ -1,0 +1,553 @@
+.formdesk-dashboard{
+    display:flex;
+    gap:15px;
+    margin:25px 0;
+    flex-wrap:wrap;
+}
+
+.formdesk-dashboard .card{
+    background:#fff;
+    border:1px solid #dcdcde;
+    border-radius:8px;
+    min-width:170px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.05);
+}
+
+.formdesk-dashboard .card h2{
+    margin:0;
+    font-size:32px;
+    color:#2271b1;
+}
+
+.formdesk-dashboard .card p{
+    margin-top:10px;
+    font-size:14px;
+}
+
+.formdesk-registration-box{
+    margin:15px 0 !important;
+    padding:0 !important;
+}
+
+.formdesk-registration-box table.widefat{
+    margin:0 !important;
+}
+
+.order_data_column .formdesk-registration-box{
+    margin-right:0 !important;
+    padding-right:0 !important;
+}
+
+.order_data_column .inside{
+    padding-right:12px !important;
+}
+
+.formdesk-registration-box td{
+    padding-right:8px !important;
+}
+
+.formdesk-registration-box select{
+    width:260px;
+}
+
+.formdesk-count{
+    display:inline-block;
+    min-width:18px;
+    height:18px;
+    line-height:18px;
+    background:#d63638;
+    color:#fff;
+    border-radius:50%;
+    font-size:11px;
+    font-weight:bold;
+    text-align:center;
+    margin-right:5px;
+    padding:0 5px;
+}
+
+/* ==========================================
+   Settings Page (FormDesk > تنظیمات)
+   ========================================== */
+
+.formdesk-settings-wrap{
+    max-width:1100px;
+}
+
+.fd-settings-hero{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:linear-gradient(135deg,#5751E1,#7069FF);
+    color:#fff;
+    padding:28px 30px;
+    border-radius:14px;
+    margin:20px 0 25px;
+    box-shadow:0 10px 30px rgba(87,81,225,.25);
+}
+
+.fd-settings-hero-icon{
+    font-size:42px;
+    background:rgba(255,255,255,.15);
+    width:70px;
+    height:70px;
+    min-width:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.fd-settings-hero h1{
+    color:#fff;
+    margin:0 0 6px;
+    padding:0;
+    font-size:22px;
+}
+
+.fd-settings-hero p{
+    margin:0;
+    color:rgba(255,255,255,.9);
+    font-size:14px;
+}
+
+/* ---------- Tabs (pure CSS, no JS dependency) ---------- */
+
+.fd-tab-radio{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.fd-tab-bar{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    background:#fff;
+    border:1px solid #e2e4e9;
+    border-radius:14px;
+    padding:8px;
+    margin-bottom:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,.03);
+    position:sticky;
+    top:32px;
+    z-index:10;
+}
+
+.fd-tab-bar label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:1;
+    justify-content:center;
+    padding:12px 16px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:13px;
+    color:#555;
+    cursor:pointer;
+    transition:.2s;
+    text-align:center;
+}
+
+.fd-tab-bar label:hover{
+    background:#f5f4ff;
+    color:#5751E1;
+}
+
+.fd-tab-icon{
+    font-size:16px;
+}
+
+/* برچسب تب فعال بر اساس رادیوی متناظر که چک شده */
+#fd-tab-general:checked ~ .fd-tab-bar label[for="fd-tab-general"],
+#fd-tab-appearance:checked ~ .fd-tab-bar label[for="fd-tab-appearance"],
+#fd-tab-statuses:checked ~ .fd-tab-bar label[for="fd-tab-statuses"]{
+    background:linear-gradient(135deg,#5751E1,#7069FF);
+    color:#fff;
+    box-shadow:0 6px 16px rgba(87,81,225,.3);
+}
+
+.fd-tab-panel{
+    display:none;
+}
+
+/* پنل مربوط به تنظیمات عمومی و ظاهر، هر دو داخل یک فرم مشترک هستند */
+.fd-tab-form{
+    display:none;
+}
+
+#fd-tab-general:checked ~ .fd-tab-form{
+    display:block;
+}
+
+#fd-tab-general:checked ~ .fd-tab-form .fd-panel-general{
+    display:block;
+}
+
+#fd-tab-appearance:checked ~ .fd-tab-form{
+    display:block;
+}
+
+#fd-tab-appearance:checked ~ .fd-tab-form .fd-panel-appearance{
+    display:block;
+}
+
+#fd-tab-statuses:checked ~ .fd-panel-statuses{
+    display:block;
+}
+
+.fd-panel-intro{
+    color:#666;
+    font-size:13px;
+    margin:0 0 20px;
+    padding-bottom:18px;
+    border-bottom:2px solid #f0f0f4;
+}
+
+.fd-tab-form,
+.fd-panel-statuses{
+    background:#fff;
+    border:1px solid #e2e4e9;
+    border-radius:14px;
+    padding:28px 30px;
+    margin-bottom:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,.03);
+}
+
+.fd-settings-subheading{
+    margin:25px 0 10px;
+    padding-top:15px;
+    border-top:1px dashed #e2e4e9;
+    font-size:15px;
+    color:#2c3338;
+}
+
+.fd-panel-general .form-table:first-of-type,
+.fd-panel-statuses > table:first-of-type{
+    margin-top:0;
+}
+
+.fd-toggle{
+    display:block;
+    font-weight:600;
+}
+
+.fd-danger-text{
+    color:#a00 !important;
+}
+
+.fd-emoji-input{
+    width:80px;
+    font-size:20px;
+    text-align:center;
+}
+
+.fd-color-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:18px;
+    margin-top:10px;
+}
+
+.fd-color-item{
+    background:#fafafc;
+    border:1px solid #ececf1;
+    border-radius:10px;
+    padding:14px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.fd-color-item label{
+    font-weight:600;
+    font-size:13px;
+    color:#2c3338;
+}
+
+.fd-color-item input[type="color"]{
+    width:100%;
+    height:40px;
+    padding:2px;
+    border:1px solid #dcdcde;
+    border-radius:8px;
+    cursor:pointer;
+    background:#fff;
+}
+
+.fd-color-item .description{
+    margin:0;
+    font-size:12px;
+    color:#777;
+}
+
+.fd-status-table{
+    max-width:650px;
+}
+
+.fd-inline-form{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.fd-add-status-form{
+    max-width:500px;
+}
+
+@media (max-width:782px){
+
+    .fd-settings-hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .fd-tab-bar{
+        position:static;
+        flex-direction:column;
+    }
+
+    .fd-tab-form,
+    .fd-panel-statuses{
+        padding:20px;
+    }
+
+}
+
+/* ======================================
+   Notifications
+   ====================================== */
+
+.formdesk-notification{
+    position:fixed;
+    left:25px;
+    bottom:25px;
+    width:360px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 10px 35px rgba(0,0,0,.18);
+    border-right:5px solid #2271b1;
+    padding:18px;
+    z-index:999999;
+    animation:formdeskNotification .35s ease;
+    transition:all .25s ease;
+    transform-origin:top center;
+}
+
+@keyframes formdeskNotification{
+    from{ opacity:0; transform:translateY(35px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.formdesk-notification .dn-title{
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:10px;
+    color:#111;
+}
+
+.formdesk-notification .dn-message{
+    font-size:14px;
+    color:#555;
+    line-height:28px;
+    margin-bottom:18px;
+}
+
+.formdesk-notification .dn-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+}
+
+.formdesk-notification .dn-open{
+    background:#2271b1 !important;
+    color:#fff !important;
+    border:none !important;
+    padding:6px 16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.formdesk-notification .dn-open:hover{
+    background:#135e96 !important;
+}
+
+.formdesk-notification .dn-close{
+    background:#f2f2f2 !important;
+    border:none !important;
+    padding:6px 14px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.formdesk-notification .dn-close:hover{
+    background:#ddd !important;
+}
+
+/* ==========================================
+   Responsive Dashboard (Mobile)
+   ========================================== */
+
+@media (max-width:768px){
+
+    .wrap{
+        overflow-x:hidden;
+        padding-left:10px !important;
+        padding-right:10px !important;
+    }
+
+    .widefat,
+    .widefat tbody,
+    .widefat tr{
+        width:100% !important;
+        max-width:100% !important;
+        box-sizing:border-box;
+    }
+
+    .widefat{
+        border:0;
+        background:transparent;
+    }
+
+    .widefat thead{
+        display:none;
+    }
+
+    .widefat tbody,
+    .widefat tr,
+    .widefat td{
+        display:block;
+        width:100%;
+    }
+
+    .widefat tr{
+        background:#fff;
+        border:1px solid #ddd;
+        border-radius:10px;
+        margin-bottom:15px;
+        padding:10px;
+        box-sizing:border-box;
+    }
+
+    .widefat td{
+        display:flex;
+        justify-content:flex-start;
+        align-items:flex-start;
+        gap:10px;
+        border:none !important;
+        border-bottom:1px solid #eee !important;
+        padding:10px 0 !important;
+        text-align:right;
+        width:100%;
+        box-sizing:border-box;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+    }
+
+    .widefat td:last-child{
+        border-bottom:none !important;
+    }
+
+    .widefat td::before{
+        flex:0 0 85px;
+        font-weight:bold;
+        color:#444;
+    }
+
+    .widefat td>*{
+        flex:1;
+        min-width:0;
+    }
+
+    .widefat td:nth-child(1)::before{ content:"شماره"; }
+    .widefat td:nth-child(2)::before{ content:"نام"; }
+    .widefat td:nth-child(3)::before{ content:"کد ملی"; }
+    .widefat td:nth-child(4)::before{ content:"موبایل"; }
+    .widefat td:nth-child(5)::before{ content:"وضعیت"; }
+    .widefat td:nth-child(6)::before{ content:"تاریخ ثبت"; }
+    .widefat td:nth-child(7)::before{ content:"عملیات"; }
+
+    .formdesk-status{
+        width:100% !important;
+        max-width:100%;
+    }
+
+    .widefat td:last-child{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+    }
+
+    .widefat td:last-child .button{
+        width:100%;
+        margin:0;
+        box-sizing:border-box;
+        text-align:center;
+    }
+
+    /* Notification Mobile */
+
+    .formdesk-notification{
+        left:10px !important;
+        right:10px !important;
+        bottom:10px !important;
+        width:auto !important;
+        max-width:none !important;
+        padding:15px !important;
+        box-sizing:border-box;
+        border-radius:10px;
+    }
+
+    .formdesk-notification .dn-title{
+        font-size:15px;
+        line-height:22px;
+    }
+
+    .formdesk-notification .dn-message{
+        font-size:13px;
+        line-height:24px;
+        margin-bottom:15px;
+        word-break:break-word;
+    }
+
+    .formdesk-notification .dn-buttons{
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .formdesk-notification .dn-buttons button,
+    .formdesk-notification .dn-buttons a,
+    .formdesk-notification .dn-open,
+    .formdesk-notification .dn-close{
+        width:100%;
+        text-align:center;
+        margin:0 !important;
+    }
+
+    .formdesk-notification:nth-last-child(1){
+        bottom:10px !important;
+        z-index:1003;
+    }
+
+    .formdesk-notification:nth-last-child(2){
+        bottom:20px !important;
+        transform:scale(.98);
+        opacity:.95;
+        z-index:1002;
+    }
+
+    .formdesk-notification:nth-last-child(3){
+        bottom:30px !important;
+        transform:scale(.96);
+        opacity:.90;
+        z-index:1001;
+    }
+
+    .formdesk-notification:nth-last-child(n+4){
+        display:none;
+    }
+
+}

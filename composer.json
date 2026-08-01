@@ -1,0 +1,14 @@
+{
+    "name": "arad/formdesk",
+    "description": "سامانه مدیریت ثبت‌نام سفارشی (FormDesk) روی بستر ووکامرس",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "phpoffice/phpspreadsheet": "1.29.0",
+        "mpdf/mpdf": "8.1.6"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.0"
+        }
+    }
+}
