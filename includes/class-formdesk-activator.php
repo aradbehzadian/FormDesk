@@ -114,7 +114,7 @@ class FormDesk_Activator
 
         $product = new WC_Product_Simple();
 
-        $product->set_name('هزینه ثبت‌نام');
+        $product->set_name('فرم ثبت نام');
         $product->set_description('این محصول فقط برای ثبت درخواست ثبت‌نام از طریق FormDesk استفاده می‌شود.');
         $product->set_status('publish');
         $product->set_catalog_visibility('visible');
