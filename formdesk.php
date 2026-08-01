@@ -2,14 +2,13 @@
 
 /**
  * Plugin Name: FormDesk
- * Plugin URI:  https://example.com/formdesk
  * Description: سامانه مدیریت ثبت‌نام سفارشی — فرم ثبت‌نام آنلاین با فیلدها و وضعیت‌های کاملاً قابل‌تعریف، پنل مدیریت متقاضیان، اعلان‌های زنده، خروجی Excel و PDF.
  * Version:     2.0.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Requires Plugins: woocommerce
  * Author:      Arad Behzadian
- * Author URI:  https://example.com
+ * Author URI:  https://github.com/aradbehzadian/FormDesk
  * Text Domain: formdesk
  * Domain Path: /languages
  * License:     GPLv2 or later
