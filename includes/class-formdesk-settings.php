@@ -39,6 +39,7 @@ class FormDesk_Settings
             'show_status_column'  => 1,
             'show_stat_cards'     => 1,
             'show_form_icon'      => 1,
+            'show_icon_circle_bg' => 1,
             'form_icon_emoji'     => '📝',
         );
     }
@@ -135,6 +136,7 @@ class FormDesk_Settings
             'show_status_column' => !empty($input['show_status_column']) ? 1 : 0,
             'show_stat_cards'    => !empty($input['show_stat_cards']) ? 1 : 0,
             'show_form_icon'     => !empty($input['show_form_icon']) ? 1 : 0,
+            'show_icon_circle_bg' => !empty($input['show_icon_circle_bg']) ? 1 : 0,
             'form_icon_emoji'    => (isset($input['form_icon_emoji']) && trim($input['form_icon_emoji']) !== '') ? sanitize_text_field($input['form_icon_emoji']) : $defaults['form_icon_emoji'],
         );
     }
@@ -165,11 +167,15 @@ class FormDesk_Settings
             </div>
 
             <?php if (!empty($_GET['fd_saved'])) : ?>
-                <div class="notice notice-success is-dismissible"><p>با موفقیت ذخیره شد.</p></div>
+                <div class="notice notice-success is-dismissible">
+                    <p>با موفقیت ذخیره شد.</p>
+                </div>
             <?php endif; ?>
 
             <?php if (!empty($_GET['fd_error'])) : ?>
-                <div class="notice notice-error is-dismissible"><p><?php echo esc_html(sanitize_text_field(wp_unslash($_GET['fd_error']))); ?></p></div>
+                <div class="notice notice-error is-dismissible">
+                    <p><?php echo esc_html(sanitize_text_field(wp_unslash($_GET['fd_error']))); ?></p>
+                </div>
             <?php endif; ?>
 
             <input type="radio" name="fd-tab" id="fd-tab-general" class="fd-tab-radio" checked>
@@ -296,6 +302,18 @@ class FormDesk_Settings
                                     بله، دایره‌ی آیکون/لوگو در بالای فرم فرانت‌اند نمایش داده شود
                                 </label>
                                 <p class="description">در صورت غیرفعال بودن این گزینه، این دایره کلاً از بالای فرم حذف می‌شود و فقط عنوان و زیرعنوان فرم نمایش داده می‌شود.</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>حذف حاشیه‌ی گرد رنگی دور آیکون</th>
+                            <td>
+                                <label class="fd-toggle">
+                                    <input type="checkbox" name="<?php echo self::OPTION_KEY; ?>[show_icon_circle_bg]" value="1"
+                                        <?php checked(!empty($settings['show_icon_circle_bg'])); ?>>
+                                    بله، حاشیه‌ی گرد و رنگی پشت آیکون/لوگو نمایش داده شود
+                                </label>
+                                <p class="description">در صورت غیرفعال بودن این گزینه، فقط خود لوگو یا اموجی (بدون دایره‌ی رنگی پشت آن) نمایش داده می‌شود. این گزینه فقط زمانی اثر دارد که «نمایش دایره‌ی آیکون بالای فرم» فعال باشد.</p>
                             </td>
                         </tr>
 
