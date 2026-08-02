@@ -138,17 +138,21 @@ class FormDesk_Registration
 
     public function render_form()
     {
-        $logo_url      = FormDesk_Settings::get('logo_url', '');
-        $form_title    = FormDesk_Settings::get('form_title', 'ثبت نام آنلاین');
-        $form_subtitle = FormDesk_Settings::get('form_subtitle', '');
-        $button_text   = FormDesk_Settings::get('submit_button_text', 'ثبت نام');
-        $show_icon     = (bool) FormDesk_Settings::get('show_form_icon', 1);
-        $icon_emoji    = FormDesk_Settings::get('form_icon_emoji', '📝');
+        $logo_url            = FormDesk_Settings::get('logo_url', '');
+        $form_title          = FormDesk_Settings::get('form_title', 'ثبت نام آنلاین');
+        $form_subtitle       = FormDesk_Settings::get('form_subtitle', '');
+        $button_text         = FormDesk_Settings::get('submit_button_text', 'ثبت نام');
+        $show_icon           = (bool) FormDesk_Settings::get('show_form_icon', 1);
+        $show_icon_circle_bg = (bool) FormDesk_Settings::get('show_icon_circle_bg', 1);
+        $icon_emoji          = FormDesk_Settings::get('form_icon_emoji', '📝');
+        $logo_class          = 'fd-logo' . ($show_icon_circle_bg ? '' : ' fd-logo-plain');
 
         ob_start();
-        ?>
+?>
 
-        <style id="formdesk-inline-vars"><?php echo self::style_vars_css(); ?></style>
+        <style id="formdesk-inline-vars">
+            <?php echo self::style_vars_css(); ?>
+        </style>
 
         <div class="fd-form-wrapper">
 
@@ -157,9 +161,9 @@ class FormDesk_Registration
                 <div class="fd-form-header">
                     <?php if ($show_icon) : ?>
                         <?php if ($logo_url) : ?>
-                            <div class="fd-logo"><img src="<?php echo esc_url($logo_url); ?>" alt="" style="max-height:56px;"></div>
+                            <div class="<?php echo esc_attr($logo_class); ?>"><img src="<?php echo esc_url($logo_url); ?>" alt="" style="max-height:56px;"></div>
                         <?php else : ?>
-                            <div class="fd-logo"><?php echo esc_html($icon_emoji); ?></div>
+                            <div class="<?php echo esc_attr($logo_class); ?>"><?php echo esc_html($icon_emoji); ?></div>
                         <?php endif; ?>
                     <?php endif; ?>
                     <h2><?php echo esc_html($form_title); ?></h2>
@@ -184,7 +188,7 @@ class FormDesk_Registration
 
         </div>
 
-        <?php
+<?php
         return ob_get_clean();
     }
 
